@@ -1,0 +1,16 @@
+<button (click)="addItem()">Add New Row</button>
+<table style="width: 100%;">
+    <tr>
+        <th>Measure Point Name</th>
+        <th>Units</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let item of data">
+        <td>
+            <input type="text" [(ngModel)]="item.name">
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="item.units">
+        </td>
+    </tr>
+</table>
