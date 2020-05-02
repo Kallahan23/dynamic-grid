@@ -10,11 +10,14 @@ import { Item } from '../../interfaces/item';
 export class GridComponent implements OnInit {
 
     data: Item[];
+    selectedInterval: number;
+    intervals = [ 6, 4, 24 ];
 
     constructor() {}
 
     ngOnInit(): void {
         this.data = [];
+        this.selectedInterval = this.intervals[0];
     }
 
     addItem(): void {

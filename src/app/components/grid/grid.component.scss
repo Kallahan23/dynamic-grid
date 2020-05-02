@@ -1,3 +1,32 @@
-input {
-    width: 95%;
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    height: 64px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0 16px;
+    align-items: center;
+    border: solid 1px grey;
+    justify-content: flex-start;
+}
+
+.toolbar {
+    height: 64px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.toolbar button {
+    margin-right: 8px;
+}
+
+.dropdown {
+    width: 50%;
 }

@@ -1,16 +1,33 @@
-<button (click)="addItem()">Add New Row</button>
-<table style="width: 100%;">
-    <tr>
-        <th>Measure Point Name</th>
-        <th>Units</th>
-        <th></th>
-    </tr>
-    <tr *ngFor="let item of data">
-        <td>
-            <input type="text" [(ngModel)]="item.name">
-        </td>
-        <td>
-            <input type="text" [(ngModel)]="item.units">
-        </td>
-    </tr>
-</table>
+<div class="container">
+
+    <div class="header">
+        <mat-select class="dropdown" [(value)]="selectedInterval">
+            <mat-option *ngFor="let interval of intervals" [value]="interval">
+                Hour Interval: {{ interval }} Hours
+            </mat-option>
+        </mat-select>
+    </div>
+
+    <div class="toolbar">
+        <button mat-flat-button color="primary" (click)="addItem()">Add New Row</button>
+        <button mat-flat-button color="primary">Save Data</button>
+    </div>
+
+    <div class="table">
+        <table style="width: 100%;">
+            <tr>
+                <th>Measure Point Name</th>
+                <th>Units</th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let item of data">
+                <td>
+                    <input type="text" [(ngModel)]="item.name" />
+                </td>
+                <td>
+                    <input type="text" [(ngModel)]="item.units" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
