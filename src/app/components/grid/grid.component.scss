@@ -10,7 +10,7 @@
     width: 100%;
     padding: 0 16px;
     align-items: center;
-    border: solid 1px grey;
+    border: 1px solid grey;
     justify-content: flex-start;
 }
 
@@ -29,29 +29,44 @@
 
 .dropdown {
     width: 50%;
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 8px;
 }
 
-.main-table {
-    width: 100%;
-}
-
-.table-data:nth-child(odd) {
-    background-color: rgb(220, 220, 220);
-}
-
-th, td {
-    border: solid 1px grey;
-}
-
-th {
-    padding: 10px;
-    text-align: start;
-}
-
-.table-header-input {
+.clear-input {
     border: none;
     width: 100%;
     box-sizing: border-box;
     padding: 8px;
     background: none;
+}
+
+.data-input {
+    border: 1px solid black;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+.main-table table {
+    position: relative;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(230, 230, 230);
+}
+
+.main-table th {
+    padding: 10px;
+    text-align: start;
+    border-bottom: 1px solid grey;
+    background: white;
+}
+
+.main-table td {
+    padding: 8px;
 }
