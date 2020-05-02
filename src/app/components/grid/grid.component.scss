@@ -14,6 +14,7 @@
         padding: 0 16px;
         align-items: center;
         border: 1px solid lightgrey;
+        box-sizing: border-box;
         justify-content: flex-start;
 
         .dropdown {
@@ -29,6 +30,9 @@
         flex-direction: row;
         width: 100%;
         align-items: center;
+        border-left: 1px solid lightgrey;
+        border-right: 1px solid lightgrey;
+        box-sizing: border-box;
         justify-content: flex-end;
 
         button {
@@ -74,7 +78,7 @@
         // Fixed table header (first row)
         th {
             text-align: start;
-            border-bottom: 2px solid lightgrey;
+            border-bottom: 1px solid lightgrey;
             background: white;
             position: sticky;
             top: 0;
@@ -86,6 +90,7 @@
         td:first-child {
             width: 300px;
             min-width: 300px;
+            border-left: 1px solid lightgrey;
             position: sticky;
             left: 0;
             z-index: 1;
@@ -96,10 +101,15 @@
         td:nth-child(2) {
             width: 100px;
             min-width: 100px;
-            border-right: 2px solid lightgrey;
+            border-right: 1px solid lightgrey;
             position: sticky;
             left: 320px;
             z-index: 1;
+        }
+
+        th:last-child,
+        td:last-child {
+            border-right: 1px solid lightgrey;
         }
 
         // Make sure fixed header labels are always on top
