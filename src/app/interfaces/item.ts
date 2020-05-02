@@ -1,8 +1,8 @@
 export interface Item {
     name: string;
     units: string;
-    values: [{
+    values: {
         time: string;
         value: string;
-    }];
+    }[];
 }

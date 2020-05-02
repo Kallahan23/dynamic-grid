@@ -30,3 +30,28 @@
 .dropdown {
     width: 50%;
 }
+
+.main-table {
+    width: 100%;
+}
+
+.table-data:nth-child(odd) {
+    background-color: rgb(220, 220, 220);
+}
+
+th, td {
+    border: solid 1px grey;
+}
+
+th {
+    padding: 10px;
+    text-align: start;
+}
+
+.table-header-input {
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    background: none;
+}

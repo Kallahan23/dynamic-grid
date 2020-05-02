@@ -12,6 +12,7 @@ export class GridComponent implements OnInit {
     data: Item[];
     selectedInterval: number;
     intervals = [ 6, 4, 24 ];
+    availableTimes = Array(24).fill(0).map((x, i) => `${i}:00`.padStart(5, '0'));
 
     constructor() {}
 
@@ -21,13 +22,17 @@ export class GridComponent implements OnInit {
     }
 
     addItem(): void {
-        this.data.push({
+        const newItem = {
             name: '',
             units: '',
-            values: [{
-                time: '',
+            values: [],
+        };
+        newItem.values = this.availableTimes.map(time => {
+            return {
+                time,
                 value: ''
-            }]
+            };
         });
+        this.data.push(newItem);
     }
 }
