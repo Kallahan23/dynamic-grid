@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Item } from '../../interfaces/item';
+import { DataService } from '../../services/data.service';
 
 @Component({
     selector: 'app-grid',
@@ -14,7 +15,7 @@ export class GridComponent implements OnInit {
     intervals = [ 6, 4, 24 ];
     availableTimes = Array(24).fill(0).map((x, i) => `${i}:00`.padStart(5, '0'));
 
-    constructor() {}
+    constructor(private dataService: DataService) {}
 
     ngOnInit(): void {
         this.data = [];
@@ -34,5 +35,9 @@ export class GridComponent implements OnInit {
             };
         });
         this.data.push(newItem);
+    }
+
+    saveForm() {
+        this.dataService.save(this.data);
     }
 }
