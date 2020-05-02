@@ -1,72 +1,128 @@
+.padded {
+    padding: 10px;
+}
+
 .container {
     display: flex;
     flex-direction: column;
+
+    .header {
+        height: 64px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding: 0 16px;
+        align-items: center;
+        border: 1px solid lightgrey;
+        justify-content: flex-start;
+
+        .dropdown {
+            width: 50%;
+            border: 1px solid black;
+            border-radius: 6px;
+        }
+    }
+
+    .toolbar {
+        height: 64px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        justify-content: flex-end;
+
+        button {
+            margin-right: 8px;
+        }
+    }
 }
 
-.header {
-    height: 64px;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    padding: 0 16px;
-    align-items: center;
-    border: 1px solid grey;
-    justify-content: flex-start;
-}
+.main-table {
+    overflow: auto;
+    height: 300px;
 
-.toolbar {
-    height: 64px;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    align-items: center;
-    justify-content: flex-end;
-}
+    table {
+        border-spacing: 0px;
+        width: 100%;
 
-.toolbar button {
-    margin-right: 8px;
-}
+        // Alternating row background colour
+        tr:nth-child(even) {
+            background-color: rgb(240, 240, 240);
 
-.dropdown {
-    width: 50%;
-    border: 1px solid black;
-    border-radius: 6px;
-    padding: 8px;
-}
+            td:first-child,
+            td:nth-child(2) {
+                background-color: rgb(240, 240, 240);
+            }
+        }
 
-.clear-input {
-    border: none;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 8px;
-    background: none;
-}
+        // Alternating row background colour
+        tr:nth-child(odd) {
+            background-color: white;
 
-.data-input {
-    border: 1px solid black;
-    border-radius: 6px;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 8px;
-}
+            td:first-child,
+            td:nth-child(2) {
+                background-color: white;
+            }
+        }
 
-.main-table table {
-    position: relative;
-    border-collapse: collapse;
-    width: 100%;
-}
+        // Pad all cells
+        th,
+        td {
+            padding: 10px;
+        }
 
-tr:nth-child(even) {
-    background-color: rgb(230, 230, 230);
-}
+        // Fixed table header (first row)
+        th {
+            text-align: start;
+            border-bottom: 2px solid lightgrey;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
 
-.main-table th {
-    padding: 10px;
-    text-align: start;
-    border-bottom: 1px solid grey;
-    background: white;
-}
+        // Fixed first coloumn
+        th:first-child,
+        td:first-child {
+            width: 300px;
+            min-width: 300px;
+            position: sticky;
+            left: 0;
+            z-index: 1;
+        }
 
-.main-table td {
-    padding: 8px;
+        // Fixed second column
+        th:nth-child(2),
+        td:nth-child(2) {
+            width: 100px;
+            min-width: 100px;
+            border-right: 2px solid lightgrey;
+            position: sticky;
+            left: 320px;
+            z-index: 1;
+        }
+
+        // Make sure fixed header labels are always on top
+        th:first-child,
+        th:nth-child(2) {
+            z-index: 3;
+        }
+
+        // Input field using table cell as border
+        .clear-input {
+            border: none;
+            width: 100%;
+            box-sizing: border-box;
+            background: none;
+        }
+
+        // Rounded input
+        .data-input {
+            border: 1px solid black;
+            border-radius: 6px;
+            width: 100%;
+            box-sizing: border-box;
+            min-width: 100px;
+        }
+    }
 }

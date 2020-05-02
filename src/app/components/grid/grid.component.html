@@ -1,7 +1,7 @@
 <div class="container">
 
     <div class="header">
-        <mat-select class="dropdown" [(value)]="selectedInterval">
+        <mat-select class="dropdown padded" [(value)]="selectedInterval">
             <mat-option *ngFor="let interval of intervals" [value]="interval">
                 Hour Interval: {{ interval }} Hours
             </mat-option>
@@ -27,14 +27,14 @@
             <tbody>
                 <tr *ngFor="let item of data">
                     <td>
-                        <input class="clear-input" type="text" [(ngModel)]="item.name" />
+                        <input class="clear-input padded" type="text" [(ngModel)]="item.name" />
                     </td>
                     <td>
-                        <input class="clear-input" type="text" [(ngModel)]="item.units" />
+                        <input class="clear-input padded" type="text" [(ngModel)]="item.units" />
                     </td>
                     <ng-container *ngFor="let value of item.values; let i = index">
                         <td *ngIf="i % selectedInterval === 0">
-                            <input class="data-input" type="text" [(ngModel)]="value.value" />
+                            <input class="data-input padded" type="text" [(ngModel)]="value.value" />
                         </td>
                     </ng-container>
                 </tr>
