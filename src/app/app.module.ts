@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
 import { GridComponent } from './components/grid/grid.component';
@@ -20,8 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         FormsModule,
         BrowserAnimationsModule,
         MatSelectModule,
-        MatButtonModule,
-        MatInputModule
+        MatButtonModule
     ],
     providers: [],
     bootstrap: [
