@@ -61,6 +61,14 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "tableview": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.tableview.ts"
+                }
+              ]
             }
           }
         },
@@ -72,6 +80,9 @@
           "configurations": {
             "production": {
               "browserTarget": "dynamic-grid:build:production"
+            },
+            "tableview": {
+              "browserTarget": "dynamic-grid:build:tableview"
             }
           }
         },
@@ -121,6 +132,9 @@
           "configurations": {
             "production": {
               "devServerTarget": "dynamic-grid:serve:production"
+            },
+            "tableview": {
+              "devServerTarget": "dynamic-grid:serve:tableview"
             }
           }
         }

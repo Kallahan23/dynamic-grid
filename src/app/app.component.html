@@ -1,8 +1,4 @@
 <div class="main">
-    <app-grid *ngIf="gridLayout"></app-grid>
-    <app-table *ngIf="!gridLayout"></app-table>
-    <button mat-mini-fab color="primary" (click)="gridLayout = !gridLayout">
-        <ng-container *ngIf="gridLayout">Grid</ng-container>
-        <ng-container *ngIf="!gridLayout">Table</ng-container>
-    </button>
+    <app-grid *ngIf="!tableLayout"></app-grid>
+    <app-table *ngIf="tableLayout"></app-table>
 </div>
