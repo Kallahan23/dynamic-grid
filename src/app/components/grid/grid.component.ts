@@ -16,13 +16,25 @@ export class GridComponent implements OnInit {
     intervals = [ 6, 4, 24 ];
     availableTimes = Array(24).fill(0).map((x, i) => `${i}:00`.padStart(5, '0'));
 
-    constructor(private dataService: DataService, private snackBar: MatSnackBar) {}
+    constructor(
+        private dataService: DataService,
+        private snackBar: MatSnackBar
+    ) {}
 
+    /**
+     * ngOnInit
+     * Component init lifecycle hook - initialise data
+     *
+     */
     ngOnInit(): void {
         this.data = [];
         this.selectedInterval = this.intervals[0];
     }
 
+    /**
+     * addItem
+     * Append empty row to table
+     */
     addItem(): void {
         const newItem = {
             name: '',
@@ -38,6 +50,10 @@ export class GridComponent implements OnInit {
         this.data.push(newItem);
     }
 
+    /**
+     * saveForm
+     * Save current form data using data service
+     */
     saveForm(): void {
         this.dataService.save(this.mapData()).subscribe(response => {
             if (response.success) {
@@ -48,11 +64,17 @@ export class GridComponent implements OnInit {
         });
     }
 
+    /**
+     * mapData
+     * Convert current Item[] data to BasicItem[], ready for posting
+     *
+     * @returns BasicItem[] Array of form data
+     */
     mapData(): BasicItem[] {
         const mappedData: BasicItem[] = [];
 
-        this.data.forEach((item) => {
-            item.values.forEach((value) => {
+        this.data.forEach(item => {
+            item.values.forEach(value => {
                 if (value.value.length > 0) {
                     mappedData.push({
                         name: item.name,
@@ -66,9 +88,15 @@ export class GridComponent implements OnInit {
         return mappedData;
     }
 
+    /**
+     * displayMessage
+     * Present a message using snackbar
+     *
+     * @param message String to display
+     */
     displayMessage(message: string): void {
         this.snackBar.open(message, 'OK', {
             duration: 4000
         });
-  }
+    }
 }
