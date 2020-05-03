@@ -1,10 +1,14 @@
-# DynamicGrid
+# Dynamic Grid
 
 A grid form template which supports dynamic columns and rows at the runtime.
 
+## Author
+
+Danny Kalnian
+
 ## Two Implementations
 
-In the end I made 2 different implementations of the template.
+In the end I made two different implementations of the template.
 In the src/app/components/grid folder, you will find the files:
 
 - `grid.component.html`
@@ -15,7 +19,7 @@ as well as:
 - `grid.alt.component.html`
 - `grid.alt.component.scss`
 
-The first 2 files (without the .alt) are my main implementation of the template.
+The first two files (without the .alt) are my main implementation of the template.
 The .alt files are an alternative implementation which don't use CSS grid, but rather use an HTML table only.
 
 I was experimenting with different approaches to see which would turn out best.
