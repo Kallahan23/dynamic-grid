@@ -4,6 +4,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Item, BasicItem } from '../../interfaces/item';
 import { DataService } from '../../services/data.service';
 
+/**
+ * GridComponent
+ *
+ * Dynamic grid form template with fixed headers
+ */
 @Component({
     selector: 'app-grid',
     templateUrl: './grid.component.html',

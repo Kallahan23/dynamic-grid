@@ -3,6 +3,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { Item, BasicItem } from '../../interfaces/item';
 import { DataService } from '../../services/data.service';
+
+/**
+ * TableComponent
+ *
+ * Alternative implementation of GridComponent
+ * Looks the same, except uses html table instead of css grid
+ */
 @Component({
     selector: 'app-table',
     templateUrl: './table.component.html',
