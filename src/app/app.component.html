@@ -1,3 +1,5 @@
 <div class="main">
-    <app-grid></app-grid>
+    <app-grid *ngIf="grid"></app-grid>
+    <app-table *ngIf="!grid"></app-table>
+    <button mat-fab color="warn" (click)="grid = !grid">Switch</button>
 </div>

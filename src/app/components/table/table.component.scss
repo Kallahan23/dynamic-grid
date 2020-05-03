@@ -1,0 +1,148 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    // Variables
+    --toolbar-height: 64px;
+
+    .padded {
+        padding: 10px;
+    }
+
+    .grey-button {
+        background-color: rgb(56, 56, 56);
+        color: white;
+    }
+
+    .header {
+        height: var(--toolbar-height);
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding: 16px;
+        align-items: center;
+        border: 1px solid lightgrey;
+        box-sizing: border-box;
+        justify-content: flex-start;
+
+        .dropdown {
+            width: 50%;
+            border: 1px solid black;
+            border-radius: 6px;
+        }
+    }
+
+    .toolbar {
+        height: var(--toolbar-height);
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding: 16px;
+        align-items: center;
+        border-left: 1px solid lightgrey;
+        border-right: 1px solid lightgrey;
+        box-sizing: border-box;
+        justify-content: flex-end;
+
+        button {
+            margin-right: 8px;
+        }
+    }
+}
+
+.main-table {
+    overflow: auto;
+
+    table {
+        border-spacing: 0px;
+        width: 100%;
+
+        // Alternating row background colour
+        tr:nth-child(even) {
+            background-color: rgb(240, 240, 240);
+
+            td:first-child,
+            td:nth-child(2) {
+                background-color: rgb(240, 240, 240);
+            }
+        }
+
+        // Alternating row background colour
+        tr:nth-child(odd) {
+            background-color: white;
+
+            td:first-child,
+            td:nth-child(2) {
+                background-color: white;
+            }
+        }
+
+        // Pad all cells
+        th,
+        td {
+            padding: 10px;
+        }
+
+        // Fixed table header (first row)
+        th {
+            text-align: start;
+            border-bottom: 1px solid lightgrey;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        // Fixed first coloumn
+        th:first-child,
+        td:first-child {
+            width: 300px;
+            min-width: 300px;
+            border-left: 1px solid lightgrey;
+            position: sticky;
+            left: 0;
+            z-index: 1;
+        }
+
+        // Fixed second column
+        th:nth-child(2),
+        td:nth-child(2) {
+            width: 100px;
+            min-width: 100px;
+            border-right: 1px solid lightgrey;
+            position: sticky;
+            left: 320px;
+            z-index: 1;
+        }
+
+        th:last-child,
+        td:last-child {
+            border-right: 1px solid lightgrey;
+        }
+
+        // Make sure fixed header labels are always on top
+        th:first-child,
+        th:nth-child(2) {
+            z-index: 3;
+        }
+
+        // Input field using table cell as border
+        .clear-input {
+            border: none;
+            width: 100%;
+            box-sizing: border-box;
+            background: none;
+        }
+
+        // Rounded input
+        .data-input {
+            border: 1px solid black;
+            border-radius: 6px;
+            width: 100%;
+            box-sizing: border-box;
+            min-width: 100px;
+        }
+    }
+}
