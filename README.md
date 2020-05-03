@@ -1,6 +1,6 @@
 # Dynamic Grid
 
-A grid form template which supports dynamic columns and rows at the runtime.
+An Angular grid form template which supports dynamic columns and rows at runtime.
 
 ## Author
 
