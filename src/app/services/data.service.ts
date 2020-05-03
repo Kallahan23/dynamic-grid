@@ -10,8 +10,16 @@ import { BasicItem } from '../interfaces/item';
     providedIn: 'root',
 })
 export class DataService {
+
     constructor(private http: HttpClient) {}
 
+    /**
+     * save
+     * Post data
+     *
+     * @param data Basic Item Array
+     * @returns Observable<any> Response
+     */
     save(data: BasicItem[]): Observable<any> {
         /* TODO post using http
         return this.http.post('/api/data', { data }).pipe(
