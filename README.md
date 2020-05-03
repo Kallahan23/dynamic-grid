@@ -36,3 +36,12 @@ I made a few small assumptions when implementing this task:
 - The structure given to the form data in the task document is written under the save data section. There is also a requirement that the textboxes all need to bind to data models. Since the 'units' field is not in the form data structure but is included as a column in the template, I made the assumption that the specified form data structure is what the data should look like only when posting. I used a modified version of this structure to use inside the component in order to complement the template structure.
 
 - Since there is no API or database to post the data to, I just made the app save the data to the browser's local storage. I have also included a comment containing a small piece of mock code which calls http.post(), just as proof that I know how to use the Angular HttpClient.
+
+## 3rd-party Packages
+
+I decided to limit the number of 3rd-party packages/tools I used, so that I can better demonstrate my abilities with raw Angular/HTML/SCSS templating, particularly when it came to the grid structure.
+The only package I installed was Angular Material, from which I only used the:
+
+- Select Module - for the dropdown menu
+- Button Module - for the stylised buttons
+- Snackbar Module - to display messages
