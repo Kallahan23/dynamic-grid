@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Item } from '../../interfaces/item';
+import { Item, BasicItem } from '../../interfaces/item';
 import { DataService } from '../../services/data.service';
 
 @Component({
@@ -38,6 +38,24 @@ export class GridComponent implements OnInit {
     }
 
     saveForm() {
-        this.dataService.save(this.data);
+        this.dataService.save(this.mapData());
+    }
+
+    mapData(): BasicItem[] {
+        const mappedData: BasicItem[] = [];
+
+        this.data.forEach((item) => {
+            item.values.forEach((value) => {
+                if (value.value.length > 0) {
+                    mappedData.push({
+                        name: item.name,
+                        time: value.time,
+                        value: value.value,
+                    });
+                }
+            });
+        });
+
+        return mappedData;
     }
 }

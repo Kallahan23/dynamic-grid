@@ -6,3 +6,9 @@ export interface Item {
         value: string;
     }[];
 }
+
+export interface BasicItem {
+    name: string;
+    time: string;
+    value: string;
+}

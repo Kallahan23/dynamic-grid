@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { BasicItem } from '../interfaces/item';
 
 @Injectable({
     providedIn: 'root',
@@ -6,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class DataService {
     constructor() {}
 
-    save(data: any[]) {
+    save(data: BasicItem[]) {
         console.log(data);
     }
 }
