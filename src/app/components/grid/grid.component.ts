@@ -16,7 +16,7 @@ export class GridComponent implements OnInit {
     /** Selected hour interval for table columns to display */
     selectedInterval: number;
     /** Available hour intervals to choose from */
-    intervals = [ 1, 6, 4, 24 ];
+    intervals = [ 6, 4, 24 ];
     /** Array of all hours in day: [ '00:00', '01:00', '02:00' ... '23:00' ] */
     availableTimes = Array(24).fill(0).map((x, i) => `${i}:00`.padStart(5, '0'));
 
@@ -41,14 +41,14 @@ export class GridComponent implements OnInit {
      */
     addItem(): void {
         const newItem = {
-            name: 'Item',
-            units: 'L',
+            name: '',
+            units: '',
             values: [],
         };
         newItem.values = this.availableTimes.map(time => {
             return {
                 time,
-                value: time
+                value: ''
             };
         });
         this.data.push(newItem);
