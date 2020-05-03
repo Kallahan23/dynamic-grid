@@ -1,7 +1,7 @@
 <div class="container">
 
     <div class="header">
-        <mat-select class="dropdown padded" [(value)]="selectedInterval">
+        <mat-select class="dropdown" [(value)]="selectedInterval">
             <mat-option *ngFor="let interval of intervals" [value]="interval">
                 Hour Interval: {{ interval }} Hours
             </mat-option>
@@ -28,55 +28,24 @@
         <div #fixedCols class="fixed-columns">
             <div *ngFor="let item of data" class="row">
                 <div class="col-1 cell">
-                    <input class="clear-input padded" type="text" [(ngModel)]="item.name" />
+                    <input class="clear-input" type="text" [(ngModel)]="item.name" />
                 </div>
                 <div class="col-2 cell">
-                    <input class="clear-input padded" type="text" [(ngModel)]="item.units" />
+                    <input class="clear-input" type="text" [(ngModel)]="item.units" />
                 </div>
             </div>
+            <div class="list-padding"></div>
         </div>
 
         <div #scrollCols class="scrolling-columns" (scroll)="scrollHead.scrollLeft = scrollCols.scrollLeft; fixedCols.scrollTop = scrollCols.scrollTop">
             <div *ngFor="let item of data" class="row" [ngStyle]="{ 'grid-template-columns': 'repeat(' + 24 / selectedInterval + ', 1fr)'}">
                 <ng-container *ngFor="let value of item.values; let i = index">
                     <div *ngIf="i % selectedInterval === 0" class="cell">
-                        <input class="data-input padded" type="text" [(ngModel)]="value.value" />
+                        <input class="data-input" type="text" [(ngModel)]="value.value" />
                     </div>
                 </ng-container>
             </div>
         </div>
     </div>
-
-    <!-- <div class="fixed-header">
-        <p class="col-1 cell">Measure Point Name</p>
-        <p class="col-2 cell">Unit</p>
-    </div>
-
-    <div class="fixed-columns">
-        <div *ngFor="let item of data" class="row">
-            <div class="col-1 cell">
-                <input class="clear-input padded" type="text" [(ngModel)]="item.name" />
-            </div>
-            <div class="col-2 cell">
-                <input class="clear-input padded" type="text" [(ngModel)]="item.units" />
-            </div>
-        </div>
-    </div>
-
-    <div class="scrolling-columns">
-        <div class="scrolling-header" [ngStyle]="{ 'grid-template-columns': 'repeat(' + 24 / selectedInterval + ', 1fr)'}">
-            <ng-container *ngFor="let time of availableTimes; let i = index">
-                <p *ngIf="i % selectedInterval === 0" class="cell">{{ time }}</p>
-            </ng-container>
-        </div>
-
-        <div *ngFor="let item of data" class="row" [ngStyle]="{ 'grid-template-columns': 'repeat(' + 24 / selectedInterval + ', 1fr)'}">
-            <ng-container *ngFor="let value of item.values; let i = index">
-                <div *ngIf="i % selectedInterval === 0" class="cell">
-                    <input class="clear-input padded" type="text" [(ngModel)]="value.value" />
-                </div>
-            </ng-container>
-        </div>
-    </div> -->
 
 </div>
