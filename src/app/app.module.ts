@@ -13,13 +13,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 /* App Components */
 import { AppComponent } from './app.component';
 import { GridComponent } from './components/grid/grid.component';
-import { TableComponent } from './components/table/table.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        GridComponent,
-        TableComponent
+        GridComponent
     ],
     imports: [
         BrowserModule,

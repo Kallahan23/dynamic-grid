@@ -62,11 +62,19 @@
                 }
               ]
             },
-            "tableview": {
+            "alt": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.tableview.ts"
+                  "with": "src/environments/environment.alt.ts"
+                },
+                {
+                  "replace": "src/app/components/grid/grid.component.html",
+                  "with": "src/app/components/grid/grid.alt.component.html"
+                },
+                {
+                  "replace": "src/app/components/grid/grid.component.scss",
+                  "with": "src/app/components/grid/grid.alt.component.scss"
                 }
               ]
             }
@@ -81,8 +89,8 @@
             "production": {
               "browserTarget": "dynamic-grid:build:production"
             },
-            "tableview": {
-              "browserTarget": "dynamic-grid:build:tableview"
+            "alt": {
+              "browserTarget": "dynamic-grid:build:alt"
             }
           }
         },
@@ -133,8 +141,8 @@
             "production": {
               "devServerTarget": "dynamic-grid:serve:production"
             },
-            "tableview": {
-              "devServerTarget": "dynamic-grid:serve:tableview"
+            "alt": {
+              "devServerTarget": "dynamic-grid:serve:alt"
             }
           }
         }
