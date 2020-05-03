@@ -1,12 +1,17 @@
-.padded {
-    padding: 10px;
-}
-
 .container {
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
+
+    .padded {
+        padding: 10px;
+    }
+
+    .grey-button {
+        background-color: rgb(56, 56, 56);
+        color: white;
+    }
 
     .header {
         height: 64px;
@@ -40,8 +45,6 @@
 
         button {
             margin-right: 8px;
-            background-color: rgb(56, 56, 56);
-            color: white;
         }
     }
 }
